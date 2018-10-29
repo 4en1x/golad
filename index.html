@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <title>GOLAD | Game of Life and Death</title>
+
+    <meta charset="UTF-8">
+        <script language="javascript" type="text/javascript" src="src/index.js"></script>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css"/>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="index.css">
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div class="canvas-cover">
+        <div>
+            <canvas id="myCanvas" width="512" height="512" onclick="addDot(event)"></canvas>
+        </div>
+        <div>
+            <button class="ui blue button" onclick="iteration()">Next Iteration</button>
+            <button class="ui yellow button" onclick="clearField()">Clear Field</button>
+        </div>
+    </div>
+    <div class="ui segment settings">
+        <h3 class="ui huge center aligned header">John Conway's Game of Life</h3>
+        <div class="ui divider"></div>
+
+        <p>The Game of Life is not your typical computer game. It is a 'cellular automaton', and was invented by Cambridge mathematician John Conway.</p>
+        <p>This game became widely known when it was mentioned in an article published by Scientific American in 1970. It consists of a collection of cells which, based on a few mathematical rules, can live, die or multiply. Depending on the initial conditions, the cells form various patterns throughout the course of the game.</p>
+        <div class="ui divider"></div>
+        <h2>Settings</h2>
+
+        <div class="ui inverted segment color-picker">
+            <div class="ui inverted segment">
+                <h4>Choose color of player (now color is
+                    <a class="ui red empty circular label" id="colorLabel"></a>
+                    )</h4>
+                <button class="ui inverted circular icon red button" data-color='red' onclick="changeColor(this.dataset.color)"></button>
+                <button class="ui inverted circular icon orange button" data-color='orange' onclick="changeColor(this.dataset.color)"></button>
+                <button class="ui inverted circular icon yellow button" data-color='yellow' onclick="changeColor(this.dataset.color)"></button>
+                <button class="ui inverted circular icon olive button" data-color='olive' onclick="changeColor(this.dataset.color)"></button>
+                <button class="ui inverted circular icon green button" data-color='green' onclick="changeColor(this.dataset.color)"></button>
+                <button class="ui inverted circular icon teal button" data-color='teal' onclick="changeColor(this.dataset.color)"></button>
+                <button class="ui inverted circular icon blue button" data-color='blue' onclick="changeColor(this.dataset.color)"></button>
+                <button class="ui inverted circular icon violet button" data-color='violet' onclick="changeColor(this.dataset.color)"></button>
+                <button class="ui inverted circular icon purple button" data-color='purple' onclick="changeColor(this.dataset.color)"></button>
+                <button class="ui inverted circular icon pink button" data-color='pink' onclick="changeColor(this.dataset.color)"></button>
+                <button class="ui inverted circular icon brown button" data-color='brown' onclick="changeColor(this.dataset.color)"></button>
+                <button class="ui inverted circular icon grey button" data-color='grey' onclick="changeColor(this.dataset.color)"></button>
+            </div>
+        </div>
+        <div class="ui toggle checkbox">
+            <input id="colorCheckbox" type="checkbox" onclick="setRandomColor()">
+            <label>Set random color</label>
+        </div>
+
+        <h4>Select board size</h4>
+        <select id="boardSize" class="ui dropdown">
+            <option value="1">16</option>
+            <option value="2">32</option>
+            <option value="3">64</option>
+            <option value="4">128</option>
+            <option value="5">256</option>
+        </select>
+
+        <button class="ui green button right floated" onclick="startCanvas()">Start Game</button>
+    </div>
+</body>
+</html>
